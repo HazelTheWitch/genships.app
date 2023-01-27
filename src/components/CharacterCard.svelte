@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { CharacterInfo } from "../helper/character";
+	import type { CharacterInfo } from "@/helper/character";
 
 
     export let first: CharacterInfo;

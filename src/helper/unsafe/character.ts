@@ -1,5 +1,5 @@
 import genshindb, { type Character } from "genshin-db";
-import type { CharacterInfo } from "@/helper/types";
+import type { CharacterInfo } from "@/helper/character";
 
 export const ELEMENT_COLORS: { [name: string]: string } = {
     Anemo: '#80FFD7',
