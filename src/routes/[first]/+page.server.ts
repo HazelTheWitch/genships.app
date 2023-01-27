@@ -6,7 +6,7 @@ export const load = (({ params }) => {
     const character = get_character_info(params.first);
 
     if (character === undefined) {
-        throw error(404, { message: "Not Found" });
+        throw error(404, { message: "Not Found", invalid_ship: false });
     }
 
     return {
