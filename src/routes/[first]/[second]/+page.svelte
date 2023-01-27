@@ -7,10 +7,10 @@
 
     export let data: PageData;
 
-    const ship = ship_name(data.first, data.second);
+    $: ship = ship_name(data.first, data.second);
 
-    const first_bg = Color(data.first.element_color).darken(0.1).desaturate(0.25);
-    const second_bg = Color(data.second.element_color).darken(0.5).desaturate(0.25);
+    $: first_bg = Color(data.first.element_color).darken(0.1).desaturate(0.25);
+    $: second_bg = Color(data.second.element_color).darken(0.5).desaturate(0.25);
 </script>
 
 <div class="pb-36 px-8 flex flex-col items-center min-h-full" style="background-image: linear-gradient(120deg, {first_bg.string()} 0%, {second_bg.string()} 100%);">
@@ -18,7 +18,9 @@
     <hr class="w-[85%] py-8 mx-auto">
     <div class="w-[80%] flex lg:flex-row flex-col items-center justify-around">
         <CharacterCard first={data.first} href="/{data.first.name}">{data.first.name}</CharacterCard>
-        <Controls first_next={data.next[0]} second_next={data.next[1]} />
+        {#key data}
+            <Controls first_next={data.next.next_first} second_next={data.next.next_second} />
+        {/key}
         <CharacterCard first={data.second} href="/{data.second.name}">{data.second.name}</CharacterCard>
     </div>
 </div>

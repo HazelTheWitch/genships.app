@@ -16,11 +16,14 @@ export const load = (({ params }) => {
         throw error(404, { message: "Not Found" });
     }
 
-    const next = get_next_ship();
+    const [next_first, next_second] = get_next_ship();
 
     return {
         first,
         second,
-        next,
+        next: {
+            next_first,
+            next_second,
+        },
     }
 }) satisfies PageServerLoad;
