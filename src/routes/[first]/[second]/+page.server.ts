@@ -16,6 +16,10 @@ export const load = (({ params }) => {
         throw error(404, { message: "Not Found", invalid_ship: false });
     }
 
+    if (first.name == second.name) {
+        throw error(404, { message: "Not Found", invalid_ship: false });
+    }
+
     if (first.child != second.child) {
         throw error(404, { message: "Not Found", invalid_ship: true });
     }
