@@ -1,4 +1,6 @@
 import type { CharacterInfo } from "./character";
+import genshindb, { Language } from "genshin-db";
+import { randomChoice } from "./choice";
 
 const SYLLABLE_REGEX = /[^aeiou]*[aeiou]+(?:[^aeiou]*$|[^aeiou](?=[^aeiou]))?/gi;
 
@@ -45,6 +47,21 @@ export function order_characters(first: CharacterInfo, second: CharacterInfo): [
         return [first, second];
     }
     return [second, first]
+}
+
+function is_child(name: string): boolean {
+    return genshindb.characters(name, { queryLanguages: [Language.English] })?.body == "LOLI";
+}
+
+export function get_next_ship(): [string, string] {
+    const names = genshindb.characters("names", { queryLanguages: [Language.English], matchCategories: true }).filter((name) => name != "Aloy");
+
+    const first = randomChoice(names);
+    const child = is_child(first);
+
+    const second = randomChoice(names.filter((name) => name != first && is_child(name) == child));
+
+    return [first, second];
 }
 
 export function ship_name(first: CharacterInfo, second: CharacterInfo): string {
