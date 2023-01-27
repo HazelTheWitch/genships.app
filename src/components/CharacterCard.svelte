@@ -23,7 +23,7 @@
     {/if}
     <div class="grid justify-center items-center text-slate-800 text-xl" style="height: 2.5em;">
         {#if placeholder}
-            <div class="w-40 h-6 bg-slate-500 rounded-xl"/>
+            <div class="w-40 h-5 bg-slate-400 rounded-xl "/>
         {:else}
             <slot />
         {/if}
