@@ -1,15 +1,5 @@
 import genshindb, { type Character } from "genshin-db";
-import type { CharacterInfo } from "@/helper/character";
-
-export const ELEMENT_COLORS: { [name: string]: string } = {
-    Anemo: '#80FFD7',
-    Cryo: '#99FFFF',
-    Dendro: '#B2EA2A',
-    Electro: '#FFACFF',
-    Geo: '#FFE699',
-    Hydro: '#80C0FF',
-    Pyro: '#FF9999',
-}
+import { ELEMENT_COLORS, type CharacterInfo } from "@/helper/character";
 
 export function to_character_info(character: Character): CharacterInfo {
     return {

@@ -17,10 +17,10 @@
     <h1 class="text-6xl text-slate-200 pt-36 pb-24">{ship}</h1>
     <hr class="w-[85%] py-8 mx-auto">
     <div class="w-[80%] flex lg:flex-row flex-col items-center justify-around">
-        <CharacterCard first={data.first} href="/{data.first.name}">{data.first.name}</CharacterCard>
+        <a href="/{data.first.name}"><CharacterCard first={data.first}>{data.first.name}</CharacterCard></a>
         {#key data}
             <Controls first_next={data.next.next_first} second_next={data.next.next_second} />
         {/key}
-        <CharacterCard first={data.second} href="/{data.second.name}">{data.second.name}</CharacterCard>
+        <a href="/{data.second.name}"><CharacterCard first={data.second}>{data.second.name}</CharacterCard></a>
     </div>
 </div>
