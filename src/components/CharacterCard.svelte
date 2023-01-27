@@ -11,9 +11,9 @@
 <div class="rounded-3xl bg-slate-200 drop-shadow-md" style="width: 256px;">
     <a href={href}>
         {#if second === undefined}
-            <img src={first.icon} alt={first.name} class="rounded-t-3xl rounded-b-2xl drop-shadow-md" width={256} height={256} style={`background-color: ${first.element_color};`}>
+            <img src={first.icon} alt={first.name} class="rounded-t-3xl rounded-b-2xl drop-shadow-md" width={256} height={256} style="background-color: {first.element_color};">
         {:else}
-            <div class="flex flex-row rounded-t-3xl rounded-b-2xl drop-shadow-md" style={`background-image: linear-gradient(120deg, ${first.element_color} 0%, ${second.element_color} 100%);`}>
+            <div class="flex flex-row rounded-t-3xl rounded-b-2xl drop-shadow-md" style="background-image: linear-gradient(120deg, {first.element_color} 0%, {second.element_color} 100%);">
                 <img src={first.icon} alt={first.name} class="rounded-tl-3xl rounded-bl-2xl" width={128} style="height: 256px; object-fit: none; object-position: 0% 50%;" />
                 <img src={second.icon} alt={second.name} class="rounded-tr-3xl rounded-br-2xl" width={128} style="height: 256px; object-fit: none; object-position: 100% 50%;" />
             </div>

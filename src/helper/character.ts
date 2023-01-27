@@ -1,4 +1,4 @@
-import type { Character } from "genshin-db";
+import genshindb, { Language, type Character } from "genshin-db";
 
 export type CharacterInfo = {
     name: string,
@@ -30,4 +30,14 @@ export function to_character_info(character: Character): CharacterInfo {
         element_color: (character.element in ELEMENT_COLORS) ? ELEMENT_COLORS[character.element] : "#DBE890",
         child: character.body == "LOLI",
     }
+}
+
+export function get_character_info(name: string): CharacterInfo | undefined {
+    const character = genshindb.characters(name, { queryLanguages: [Language.English] });
+
+    if (character === undefined) {
+        return undefined;
+    }
+
+    return to_character_info(character);
 }
