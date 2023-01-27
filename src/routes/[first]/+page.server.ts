@@ -1,5 +1,5 @@
 import { error } from "@sveltejs/kit";
-import { get_character_info } from "../../helper/character";
+import { get_character_info } from "@/helper/character";
 import type { PageServerLoad } from "./$types";
 
 export const load = (({ params }) => {

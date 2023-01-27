@@ -1,7 +1,7 @@
-import { get_character_info } from "../../../helper/character";
+import { get_character_info } from "@/helper/character";
 import type { PageServerLoad } from "./$types";
 import { error } from '@sveltejs/kit';
-import { get_next_ship } from "../../../helper/ship";
+import { get_next_ship } from "@/helper/ship";
 
 export const load = (({ params }) => {
     const first = get_character_info(params.first);

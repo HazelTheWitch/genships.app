@@ -1,9 +1,9 @@
 <script lang="ts">
-	import CharacterCard from "../../../components/CharacterCard.svelte";
-	import { ship_name } from "../../../helper/ship";
+	import CharacterCard from "@/components/CharacterCard.svelte";
+	import { ship_name } from "@/helper/ship";
     import type { PageData } from "./$types";
     import Color from "color";
-	import Controls from "../../../components/Controls.svelte";
+	import Controls from "@/components/Controls.svelte";
 
     export let data: PageData;
 

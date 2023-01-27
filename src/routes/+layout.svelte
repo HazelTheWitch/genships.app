@@ -1,5 +1,5 @@
 <script>
-    import "../app.css";
+    import "@/app.css";
 </script>
 
 <main class="montserrat bg-slate-600 h-screen">
