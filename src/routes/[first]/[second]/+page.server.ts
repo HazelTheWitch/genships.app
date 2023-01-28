@@ -1,5 +1,5 @@
-import { get_character_info } from "@/helper/unsafe/character";
-import { get_next_ship } from "@/helper/unsafe/ship";
+import { get_character_info } from "@/helper/server_side/character";
+import { get_next_ship } from "@/helper/server_side/ship";
 import type { PageServerLoad } from "./$types";
 import { error } from '@sveltejs/kit';
 
